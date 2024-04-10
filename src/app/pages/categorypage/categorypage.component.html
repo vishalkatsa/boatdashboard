@@ -1,0 +1,29 @@
+<div class="w-full bg-gray-900 border-b shadow-lg shadow-gray-300">
+    <div class="w-[95%] mx-auto px-4 py-2 flex justify-end">
+
+        <div class="w-[80%]">
+
+        </div>
+        <div class="w-[20%] pl-2 flex justify-between">
+            <div    (click)="CategoryHandler()"
+                [ngClass]="!CategoryButton ? 'cursor-pointer text-white  border-b-2 border-[#ff0000] hover:border-white  mt-2 px-4 rounded  md:hover:bg-transparent   md:p-0 dark:text-white   dark:hover:text-white md:dark:hover:bg-transparent': 'cursor-pointer text-white  border-b-2 border-white hover:border-[#ff0000]  mt-2 px-4  rounded  md:hover:bg-transparent   md:p-0 dark:text-white   dark:hover:text-white md:dark:hover:bg-transparent'">
+                Category</div>
+
+            <button (click)="trigerCategory()" data-tooltip-target="tooltip-new" type="button"
+                class="inline-flex items-center justify-center w-10 h-10 font-medium bg-[#ff0000] rounded-full hover:bg-[#e63535] group focus:ring-4 focus:ring-[#ff0000] focus:outline-none dark:focus:ring-[#ff0000]">
+                <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 18 18">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                </svg>
+                <span class="sr-only">New item</span>
+            </button>
+        </div>
+    </div>
+</div>
+@if (CategoryButton) {
+    <app-createcategory></app-createcategory>
+}@else{
+    <app-totalcategory></app-totalcategory>
+}
+

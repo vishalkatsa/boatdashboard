@@ -1,0 +1,123 @@
+<div class="w-full mt-8 mx-auto">
+
+
+    <div class="w-[95%] h-screen bg-white mx-auto rounded-md border border-gray-200   flex justify-between">
+        <div class="w-[80%] ">
+            <div class="w-full py-3 px-4 bg-gray-900 rounded-tl-md text-white mx-auto border-b">
+                <h1 class="text-xl tracking-wider font-bold ">Register Authorize User</h1>
+            </div>
+            <form class="w-full p-4" #registerForm="ngForm">
+                <!-- 1 -->
+                <div class="w-full flex gap-4">
+                    <div class="w-full md:w-[70%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">Name</label>
+                        <input type="text" 
+                               name="name" [(ngModel)]="registerOBJ.name" 
+                               minlength="3"
+                               required 
+                               #name="ngModel"
+                               class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                        <p class="text-red-600 text-sm mt-1 ml-2"
+                            *ngIf="name.invalid && name.touched || name.dirty||isFormSubmited">
+                            <span *ngIf="name.errors?.['required']">Please inter the Name</span>
+                            <span *ngIf="name.errors?.['minlength']">Please inter minimum 15 Name</span>
+                        </p>
+                    </div>
+                    <div class="w-full md:w-[30%] ">
+                        <label class="block py-2 px-2 rounded-sm tracking-wide">Role</label>
+                        <select type="text" 
+                            name="role" 
+                        
+                            [(ngModel)]="registerOBJ.role" 
+                            required
+                            #role="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm ">
+                            
+
+                            <!-- <option value="superadmin">Superadmin</option> -->
+                            <option value="">Select Role</option>
+                            <option value="director">Director</option>
+                            <option value="warehouse_manager">Warehouse Manager</option>
+                            <option value="customer_service">Customer Service</option>
+                            <option value="sales_manager">Sales Manager</option>
+                            <option value="marketing_manager">Marketing Manager</option>
+                            <option value="content_manager">Content Manager</option>
+                            <option value="accountant">Accountant</option>
+
+                        </select>
+                        <p class="text-red-600 text-sm mt-1 ml-2"
+                            *ngIf="role.invalid && role.touched || role.dirty || isFormSubmited">
+                            <span *ngIf="role.errors?.['required']">Please inter the role</span>
+                           
+                        </p>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="w-full flex gap-4">
+                    <div class="w-full md:w-[60%]">
+                        <label class="block py-2 px-2 rounded-sm tracking-wide">Email</label>
+                        <input 
+                            type="text" 
+                            name="email" 
+                            [(ngModel)]="registerOBJ.email" 
+                            minlength="10"
+                            required #email="ngModel"
+                            class="block w-full  border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                        <p class="text-red-600 text-sm mt-1 ml-2"
+                            *ngIf="email.invalid && email.touched || email.dirty || isFormSubmited">
+                            <span *ngIf="email.errors?.['required']">Please inter the email</span>
+                            <span *ngIf="email.errors?.['minlength']">Please inter minimum 10 email</span>
+                        </p>
+                    </div>
+                    <div class="w-full md:w-[40%]">
+                        <div>
+                            <label class="block py-2 px-2 rounded-sm tracking-wide">Password</label>
+                            <input 
+                                type="text" 
+                                name="password" 
+                                [(ngModel)]="registerOBJ.password" 
+                                minlength="6" 
+                                required
+                                #password="ngModel"
+                                class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                            <p class="text-red-600 text-sm mt-1 ml-2"
+                                *ngIf="password.invalid && password.touched || password.dirty || isFormSubmited">
+                                <span *ngIf="password.errors?.['required']">Please inter the password</span>
+                                <span *ngIf="password.errors?.['minlength']">Please inter minimum 6 password</span>
+                            </p>
+                        </div>
+                        <div>
+                            <label class="block py-2 px-2 rounded-sm tracking-wide">Mobile</label>
+                            <input 
+                                type="number" 
+                                name="mobile" 
+                                [(ngModel)]="registerOBJ.mobile" 
+                                minlength="10" 
+                                maxlength="10"
+                                required
+                                #mobile="ngModel"
+                                class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                            <p class="text-red-600 text-sm mt-1 ml-2"
+                                *ngIf="mobile.invalid && mobile.touched|| mobile.dirty || isFormSubmited">
+                                <span *ngIf="mobile.errors?.['required']">Please inter the mobile</span>
+                                <span *ngIf="mobile.errors?.['minlength']">Please inter minimum 10 mobile</span>
+                                <span *ngIf="mobile.errors?.['maxlength']">Please inter maxlength 10 mobile</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="w-[20%] border-l border-gray-300 my-5">
+            <div class="w-full flex justify-evenly">
+
+
+                <button type="submit" (click)="submitHandler(registerForm)"
+                    class="focus:outline-none text-white bg-[#ff0000] hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#ff0000] dark:hover:bg-red-700 dark:focus:ring-red-900">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

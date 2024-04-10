@@ -1,0 +1,283 @@
+<app-navbar />
+
+<div class="flex mt-5 ">
+    <div class="w-[20%]">
+
+    </div>
+    <div class="w-[40%]">
+        @if (firstHide == false) {
+        <form #FirstRegister="ngForm" (ngSubmit)="RegisterAndContinue(FirstRegister) 
+            
+            ">
+             <div class="flex justify-between">
+
+      
+                <div class="flex ml-1 mb-5">
+                 <div class="text-[#5a5a5a]">
+                     <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+                 </div>
+                 <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                     EMAIL ID & GST 
+                 </h1>
+             </div>
+             <div class="flex ml-1 mb-5">
+                 <div class="text-[#5a5a5a]">
+                     <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+                 </div>
+                 <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                     PASSWORD CREATION
+                 </h1>
+             </div>
+             <div class="flex ml-1 mb-5">
+                 <div class="text-[#5a5a5a]">
+                     <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+                 </div>
+                 <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                     ONBOARDING DASHBOARD
+                 </h1>
+             </div>
+         </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="number" name="floating_email" id="floating_email"
+                    class="block py-3 px-4 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " name="mobile" #mobile="ngModel" [(ngModel)]="registerOBJ.mobile" required />
+                <label for="floating_email"
+                    class="peer-focus:font-medium px-4 mx-2 bg-white z-30  absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3  origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Enter
+                    Mobile Number <span class="text-red-600 pt-2">*</span>
+                </label>
+
+                <div *ngIf="mobile.invalid && mobile.touched" class="text-red-500 px-4 text-sm mt-2 font-medium ">
+                    <span *ngIf="mobile.errors?.['required']">Please enter your mobile number</span>
+                    <!-- <span *ngIf="mobile.errors?.['mobile']">Invalid mobile format</span> -->
+                </div>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="email" name="floating_email" id="floating_email"
+                    class="block py-3 px-4 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " name="email" #email="ngModel" [(ngModel)]="registerOBJ.email" required />
+                <label for="floating_email"
+                    class="peer-focus:font-medium px-4 mx-2 bg-white z-30 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3  origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Enter
+                    Email ID <span class="text-red-600 pt-2">*</span>
+                </label>
+
+                <div *ngIf="email.invalid && email.touched" class="text-red-500 px-4 text-sm mt-2 font-medium ">
+                    <span *ngIf="email.errors?.['required']">Please enter your email</span>
+                    <!-- <span *ngIf="email.errors?.['email']">Invalid email format</span> -->
+                </div>
+            </div>
+            <h1 class="ml-1">What are you looking to sell on Flipkart?</h1>
+            <div class="flex mt-5">
+                <div class="flex border rounded-lg">
+                    <div class="p-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.089 12L11.9895 21.6385" stroke="#607080" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path
+                                d="M20.6145 16.4374V7.5626C20.6145 7.42978 20.5792 7.29935 20.5123 7.18463C20.4454 7.06991 20.3492 6.97503 20.2335 6.90968L12.3585 2.45859C12.246 2.39495 12.1188 2.36151 11.9895 2.36151C11.8602 2.36151 11.733 2.39495 11.6205 2.45859L3.74546 6.90968C3.62983 6.97503 3.53364 7.06991 3.4667 7.18463C3.39977 7.29935 3.3645 7.42978 3.3645 7.5626V16.4374C3.3645 16.5702 3.39977 16.7007 3.4667 16.8154C3.53364 16.9301 3.62983 17.025 3.74546 17.0903L11.6205 21.5414C11.733 21.605 11.8602 21.6385 11.9895 21.6385C12.1188 21.6385 12.246 21.605 12.3585 21.5414L20.2335 17.0903C20.3492 17.025 20.4454 16.9301 20.5123 16.8154C20.5792 16.7007 20.6145 16.5702 20.6145 16.4374V16.4374Z"
+                                stroke="#607080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path d="M20.5117 7.18378L12.0889 12L3.46777 7.18275" stroke="#607080" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M16.5957 13.9229V9.42291L7.89771 4.56272" stroke="#607080" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <div class="py-4 pr-4 font-light text-[#414141]">
+                        All Categories
+                    </div>
+                </div>
+                <div class="flex border rounded-lg ml-3">
+                    <div class="p-4">
+                        <svg width="22" height="22" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.75 17.5C3.75 17.0027 3.94754 16.5258 4.29917 16.1742C4.65081 15.8225 5.12772 15.625 5.625 15.625H16.25V2.5H5.625C5.12772 2.5 4.65081 2.69754 4.29917 3.04917C3.94754 3.40081 3.75 3.87772 3.75 4.375V17.5Z"
+                                stroke="#607080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path d="M3.75 17.5V18.125H15" stroke="#607080" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <div class="py-2 pr-4 font-light text-[#414141]">
+                        <h1> Only Books</h1>
+                        <span class="text-xs">(PAN is mandatory)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-0 w-full mb-5 mt-5 group">
+                <input type="text" name="floating_email" id="floating_email"
+                    class="block py-3 px-4 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " name="gstnumber" #gstnumber="ngModel" [(ngModel)]="registerOBJ.gstnumber" />
+                <label for="floating_email"
+                    class="peer-focus:font-medium px-4 mx-2 bg-white z-30 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3  origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Enter
+                    GSTIN</label>
+
+            </div>
+            <div>
+                <h1 class="ml-1">PAN is required to sell books on Flipkart. You can also share it in the final step.
+                </h1>
+                <p class="ml-1 text-xs mt-5">By continuing, I agree to Flipkart’s <span
+                        class="text-[#0066cc] text-base">Terms of Use</span> & <span class="text-[#0066cc] text-base">
+                        Privacy Policy</span></p>
+            </div>
+            <div class="mt-5">
+                <button type="submit"
+                    class="w-52 cursor-pointer bg-[#0066cc] rounded-md text-white font-medium py-2 text-center">Register
+                    & Continue</button>
+            </div>
+        </form>
+        }
+
+
+
+
+        <!-- //////////////////////////// Secound Step /////////////////////////// -->
+
+
+
+
+
+        @if (firstHide && FinalHide == false) {
+            <div class="flex justify-between">
+
+      
+                <div class="flex ml-1 mb-5">
+                 <div class="text-[#5a5a5a]">
+                     <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+                 </div>
+                 <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                     EMAIL ID & GST 
+                 </h1>
+             </div>
+             <div class="flex ml-1 mb-5">
+                 <div class="text-[#5a5a5a]">
+                     <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+                 </div>
+                 <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                     PASSWORD CREATION
+                 </h1>
+             </div>
+             <div class="flex ml-1 mb-5">
+                 <div class="text-[#5a5a5a]">
+                     <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+                 </div>
+                 <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                     ONBOARDING DASHBOARD
+                 </h1>
+             </div>
+         </div>
+        <form #FirstRegister2="ngForm" (ngSubmit)="Continuenext(FirstRegister2) 
+            ">
+
+       
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="password" id="password"
+                class="block py-3 px-4 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" " name="password" #password="ngModel" [(ngModel)]="registerOBJ.password" required />
+            <label for="password"
+                class="peer-focus:font-medium px-4 mx-2 bg-white z-30  absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3  origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password
+                <span class="text-red-600 pt-2">*</span>
+            </label>
+
+            <div *ngIf="password.invalid && password.touched" class="text-red-500 px-4 text-sm mt-2 font-medium ">
+                <span *ngIf="password.errors?.['required']">Please enter your password</span>
+                <!-- <span *ngIf="password.errors?.['password']">Invalid password format</span> -->
+            </div>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="password"  id="password"
+                class="block py-3 px-4 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" " placeholder=" " name="conformpassword" #conformpassword="ngModel"
+                [(ngModel)]="registerOBJ.conformpassword" required />
+            <label for="password"
+                class="peer-focus:font-medium px-4 mx-2 bg-white z-30 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3  origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Conform
+                Password <span class="text-red-600 pt-2">*</span>
+            </label>
+            <div *ngIf="conformpassword.invalid && conformpassword.touched" class="text-red-500 px-4 text-sm mt-2 font-medium ">
+                <span *ngIf="conformpassword.errors?.['required']">Please enter your conform conformpassword</span>
+                <!-- <span *ngIf="conformpassword.errors?.['conformpassword']">Invalid conformpassword format</span> -->
+            </div>
+        </div>
+        <div class="mt-5 flex justify-between">
+            <h1 (click)="back1()"
+                class="w-52 cursor-pointer bg-[#0066cc] rounded-md text-white font-medium py-2 text-center"> Back </h1>
+
+            <button type="submit"
+                class="w-52 cursor-pointer bg-[#0066cc] rounded-md text-white font-medium py-2 text-center">Continue
+                next</button>
+        </div>
+ <!--/////////////////////////////// Third  ///////////////////////////////////// -->
+    </form>
+        }
+        @if ( FinalHide == true) {
+            <form #FirstRegister3="ngForm" (ngSubmit)="FinalSubmit(FirstRegister3) 
+            ">
+            <div class="flex justify-between">
+
+      
+           <div class="flex ml-1 mb-5">
+            <div class="text-[#5a5a5a]">
+                <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+            </div>
+            <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                EMAIL ID & GST 
+            </h1>
+        </div>
+        <div class="flex ml-1 mb-5">
+            <div class="text-[#5a5a5a]">
+                <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+            </div>
+            <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                PASSWORD CREATION
+            </h1>
+        </div>
+        <div class="flex ml-1 mb-5">
+            <div class="text-[#5a5a5a]">
+                <svg x="0" y="0" viewBox="0 0 24 24" width="20"><g id="Page-1" stroke="none" stroke-width="1" fill="#5a5a5a" fill-rule="evenodd"><g id="All-Tickets/Seller-Details" transform="translate(-280.000000, -282.000000)"><g id="Group-2" transform="translate(280.000000, 273.000000)"><g id="Group"><g id="Progress-indicator"><g id="Group-4"><g id="Steps/status/Done" transform="translate(0.000000, 9.000000)"><g id="Done"><path d="M12,0 C18.6,0 24,5.4 24,12 C24,18.6 18.6,24 12,24 C5.4,24 0,18.6 0,12 C0,5.4 5.4,0 12,0 Z M12,2 C6.5,2 2,6.5 2,12 C2,17.5 6.5,22 12,22 C17.5,22 22,17.5 22,12 C22,6.5 17.5,2 12,2 Z M10,14 L16.1,8 L17.5,9.4 L10,16.8 L6,12.8 L7.4,11.4 L10,14 Z" id="Combined-Shape"></path></g></g></g></g></g></g></g></g></svg>
+            </div>
+            <h1 class="text-sm font-medium text-[#5a5a5a] ml-2 border-b-2 border-blue-600 ">
+                ONBOARDING DASHBOARD
+            </h1>
+        </div>
+    </div>
+             <div class="relative z-0 w-full mb-5 group">
+                 <input type="text" id="shop_or_company"
+                     class="block py-3 px-4 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                     placeholder=" " name="name" #name="ngModel" [(ngModel)]="registerOBJ.name" required />
+                 <label for="shop_or_company"
+                     class="peer-focus:font-medium px-4 mx-2 bg-white z-30  absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3  origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"> Name
+                     <span class="text-red-600 pt-2">*</span>
+                 </label>
+
+                 <div *ngIf="name.invalid && name.touched" class="text-red-500 px-4 text-sm mt-2 font-medium ">
+                     <span *ngIf="name.errors?.['required']">Please enter your name</span>
+                     <!-- <span *ngIf="name.errors?.['name']">Invalid name format</span> -->
+                 </div>
+             </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" id="shop_or_company"
+                    class="block py-3 px-4 rounded-lg w-full text-sm text-gray-900 bg-transparent border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" " name="shop_or_company" #shop_or_company="ngModel" [(ngModel)]="registerOBJ.shop_or_company" required />
+                <label for="shop_or_company"
+                    class="peer-focus:font-medium px-4 mx-2 bg-white z-30  absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3  origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Shop or Company Name
+                    <span class="text-red-600 pt-2">*</span>
+                </label>
+    
+                <div *ngIf="shop_or_company.invalid && shop_or_company.touched" class="text-red-500 px-4 text-sm mt-2 font-medium ">
+                    <span *ngIf="shop_or_company.errors?.['required']">Please enter your Shop Company</span>
+                    <!-- <span *ngIf="shop_or_company.errors?.['shop_or_company']">Invalid shop_or_company format</span> -->
+                </div>
+            </div>
+            <div class="mt-5 flex justify-between">
+                <h1 (click)="back2()"
+                    class="w-52 cursor-pointer bg-[#0066cc] rounded-md text-white font-medium py-2 text-center"> Back </h1>
+    
+                <button type="submit"
+                    class="w-52 cursor-pointer bg-[#0066cc] rounded-md text-white font-medium py-2 text-center">Final Submit </button>
+            </div>
+            </form>
+        }
+    </div>
+    <div class="w-[40%]">
+
+    </div>
+</div>

@@ -1,0 +1,200 @@
+<div class="w-full mt-8 mx-auto ">
+
+
+    <div class="w-[95%] h-screen  bg-white mx-auto rounded-md border border-gray-200   flex justify-between">
+        <div class="w-[80%] ">
+            <div class="w-full py-3 px-4 bg-gray-900 rounded-tl-md text-white mx-auto border-b">
+                <h1 class="text-xl tracking-wider font-bold ">Create Catagory </h1>
+            </div>
+            <form class="w-full p-4 " #productForm="ngForm">
+                <!-- 1 -->
+                <div class="w-full flex gap-8 justify-between">
+                    <form #Create_Catagory class="w-full md:w-[80%] flex justify-between">
+                        <div class="w-[80%]">
+                            <label class="block  py-2 px-2 rounded-sm tracking-wide">Create Catagory</label>
+                            <input type="text" 
+                                   name="productname" 
+                                   [(ngModel)]="maincategory" 
+                                   minlength="2"
+                                   required #productname="ngModel"
+                                   class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                            <p class="text-red-600 text-sm mt-1 ml-2"
+                                *ngIf="productname.invalid && productname.touched || productname.dirty||isFormSubmited">
+                                <span *ngIf="productname.errors?.['required']">Please inter the title</span>
+                                <span *ngIf="productname.errors?.['minlength']">Please inter minimum 15 title</span>
+                            </p>
+                        </div>
+                        <button type="submit" (click)="submitHandler(productForm)"
+                            class=" focus:outline-none  h-10 mt-10 text-white bg-[#ff0000] hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#ff0000] dark:hover:bg-red-700 dark:focus:ring-red-900">Create
+                        </button>
+                    </form>
+                    <div class="w-full md:w-[80%] flex justify-between">
+                        <div class="w-[80%]">
+                            <label class="block  py-2 px-2 rounded-sm tracking-wide">Listed Catagory</label>
+                            <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                                required #productname="ngModel"
+                                class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                            <p class="text-red-600 text-sm mt-1 ml-2"
+                                *ngIf="productname.invalid && productname.touched || productname.dirty||isFormSubmited">
+                                <span *ngIf="productname.errors?.['required']">Please inter the title</span>
+                                <span *ngIf="productname.errors?.['minlength']">Please inter minimum 15 title</span>
+                            </p>
+                        </div>
+                        <div class="w-[10%]   flex items-center ">
+                            <div type="submit"
+                                class=" h-10 mt-10 bg-gray-300 hover:bg-gray-200 cursor-pointer mb-2 text-gray-700   rounded-lg">
+                                <mat-icon
+                                    class=" text-2xl mr-2 text-gray-700 focus:animate-spin mt-1 ml-2 ">refresh</mat-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 sub category -->
+
+                <div class="w-full flex gap-8 justify-between">
+                    <div class="w-full md:w-[40%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">Create Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                        <p class="text-red-600 text-sm mt-1 ml-2"
+                            *ngIf="productname.invalid && productname.touched || productname.dirty||isFormSubmited">
+                            <span *ngIf="productname.errors?.['required']">Please inter the title</span>
+                            <span *ngIf="productname.errors?.['minlength']">Please inter minimum 15 title</span>
+                        </p>
+                    </div>
+                    <button type="submit" (click)="submitHandler(productForm)"
+                        class=" focus:outline-none  h-10 mt-10 text-white bg-[#ff0000] hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#ff0000] dark:hover:bg-red-700 dark:focus:ring-red-900">Create
+                    </button>
+                    <div class="w-full md:w-[40%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">Listed Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                        <p class="text-red-600 text-sm mt-1 ml-2"
+                            *ngIf="productname.invalid && productname.touched || productname.dirty||isFormSubmited">
+                            <span *ngIf="productname.errors?.['required']">Please inter the title</span>
+                            <span *ngIf="productname.errors?.['minlength']">Please inter minimum 15 title</span>
+                        </p>
+                    </div>
+                    <div class="w-[10%]   flex items-center ">
+
+                        <div type="submit"
+                            class=" h-10 mt-10 bg-gray-300 hover:bg-gray-200 cursor-pointer mb-2 text-gray-700   rounded-lg">
+                            <mat-icon
+                                class=" text-2xl mr-2 text-gray-700 focus:animate-spin mt-1 ml-2 ">refresh</mat-icon>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- 3 To Sub Category  -->
+                <div class="w-full flex justify-between">
+                    <div class="w-full md:w-[70%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+                        <p class="text-red-600 text-sm mt-1 ml-2"
+                            *ngIf="productname.invalid && productname.touched || productname.dirty||isFormSubmited">
+                            <span *ngIf="productname.errors?.['required']">Please inter the title</span>
+                            <span *ngIf="productname.errors?.['minlength']">Please inter minimum 15 title</span>
+                        </p>
+                    </div>
+                    <div class="w-[10%]   flex items-center ">
+
+                        <div type="submit"
+                            class=" h-10 mt-10 bg-gray-300 hover:bg-gray-200 cursor-pointer mb-2 text-gray-700   rounded-lg">
+                            <mat-icon
+                                class=" text-2xl mr-2 text-gray-700 focus:animate-spin mt-1 ml-2 ">refresh</mat-icon>
+                        </div>
+
+                    </div>
+                    <button type="submit" (click)="submitHandler(productForm)"
+                        class=" focus:outline-none h-10 mt-10 text-white bg-[#ff0000] hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#ff0000] dark:hover:bg-red-700 dark:focus:ring-red-900">Publish
+                    </button>
+                </div>
+                <!-- 3 to sub category part  -->
+                <div class="w-full flex justify-between">
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                </div>
+                <div class="w-full flex justify-between">
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                </div>
+                <div class="w-full flex justify-between">
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                    <div class="w-full md:w-[30%]">
+                        <label class="block  py-2 px-2 rounded-sm tracking-wide">To Sub Catagory</label>
+                        <input type="text" name="productname" [(ngModel)]="productOBJ.productname" minlength="15"
+                            required #productname="ngModel"
+                            class="block w-full border border-gray-400 focus:bg-white rounded-md bg-[#f5f5f5] outline-none px-4 py-2 text-sm " />
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="w-[20%] border-l border-gray-300 my-5">
+            <div class="w-full flex justify-evenly">
+
+                <button type="submit" (click)="submitHandler(productForm)"
+                    class="focus:outline-none text-white bg-[#ff0000] hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#ff0000] dark:hover:bg-red-700 dark:focus:ring-red-900">Finel
+                    Category
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

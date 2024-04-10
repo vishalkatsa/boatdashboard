@@ -1,0 +1,61 @@
+
+<div class="w-full bg-white px-4 flex relative">
+    <div 
+            (click)="sidebarToggleHandler()"
+            class="absolute right-0 z-50">
+            @if (sidebarToggle === false) {
+                
+                <mat-icon class="mt- text-4xl mr-2">chevron_right</mat-icon>
+            }@else {
+                <mat-icon class="mt- text-4xl mr-2">chevron_left</mat-icon>
+            }
+            
+        </div>
+    <div class="bg-white ">
+        
+        <div class="w-full h-12 items-center flex ">
+            <img 
+                class="w-full h-full"
+                src="https://play-lh.googleusercontent.com/5T9UcnMRQ7NIIqeo58ZCvG5-qEXkOoHVq6p4F3poPU-vk-9vPKLpXNMjwnfh93e66Mut" alt=""/>
+        </div>
+        <div routerLink="/sellerhome/order" routerLinkActive="active-link " [routerLinkActiveOptions]="{exact:true}" [ngClass]="!sidebarToggle ? ' text-gray-900 px-3 py-[6px] mb-1  rounded-md cursor-pointer'  : 'cursor-pointer text-gray-900 px-3 py-[6px] mb-1  rounded-tl-md rounded-bl-md'">
+            <mat-icon class="mt-1">add_card</mat-icon>
+        </div>
+        
+        <div routerLink="/sellerhome" routerLinkActive="active-link " [routerLinkActiveOptions]="{exact:true}" [ngClass]="!sidebarToggle ? '  text-gray-900 px-3 py-[6px] mb-1 rounded-md' : ' text-gray-000 px-3 py-[6px] mb-1  rounded-tl-md rounded-bl-md'">
+            <mat-icon class="mt-1">local_shipping</mat-icon>
+        </div>
+        <div routerLink="/sellerhome" routerLinkActive="active-link " [routerLinkActiveOptions]="{exact:true}"  [ngClass]="!sidebarToggle ? '  text-gray-900 px-3 py-[6px] mb-1  rounded-md cursor-pointer'  : 'cursor-pointer text-gray-900 px-3 py-[6px] mb-1  rounded-tl-md rounded-bl-md'">
+            <mat-icon class="mt-1">inventory</mat-icon>
+        </div>
+      
+        <div routerLink="productlistingpage" routerLinkActive="active-link " [routerLinkActiveOptions]="{exact:true}" [ngClass]="!sidebarToggle ? ' text-gray-900 px-3 py-[6px] mb-1  rounded-md cursor-pointer'  : 'cursor-pointer text-gray-900 px-3 py-[6px] mb-1  rounded-tl-md rounded-bl-md'">
+            <mat-icon class="mt-1">post_add</mat-icon>   
+        </div>
+        
+    </div>
+    @if (sidebarToggle === false) {
+        
+    }@else {
+        <div class="bg-white w-full pr-8">
+            <div class="w-full h-12 px-3 py-[14px] ">
+                <h1 class="font-medium text-base tracking-wide">Admin</h1>
+            </div>
+            <div routerLink="/sellerhome/order" routerLinkActive="active-link " [routerLinkActiveOptions]="{exact:true}" class=" w-full text-gray-900 px-3 py-[11px] cursor-pointer pb-[11px] mb-1   rounded-tr-md rounded-br-md ">
+                <a routerLink="/sellerhome/order" routerLinkActive="active " [routerLinkActiveOptions]="{exact:true}" class="font-medium text-base tracking-wide">Orders</a>
+            </div>
+            <div routerLink="/sellerhome" routerLinkActive="active-link " [routerLinkActiveOptions]="{exact:true}" class=" text-gray-900 px-3 py-[11px] cursor-pointer pt-[11px] mb-1  rounded-tr-md rounded-br-md">
+                <h1 class="font-medium text-base tracking-wide">Shipping</h1>
+            </div>
+            <div routerLink="/sellerhome" routerLinkActive="active-link " [routerLinkActiveOptions]="{exact:true}" class=" text-gray-900 px-3 py-[11px] cursor-pointer pt-[11px] mb-1  rounded-tr-md rounded-br-md">
+                <h1 class="whitespace-nowrap font-medium text-base tracking-wide">Product Stock</h1>
+            </div>
+      
+            <div routerLink="productlistingpage" routerLinkActive="active-link " [routerLinkActiveOptions]="{exact:true}" class=" text-gray-900 px-3 py-[11px] cursor-pointer pt-[11px] mb-1  rounded-tr-md rounded-br-md">
+                <h1   class="active whitespace-nowrap font-medium text-base tracking-wide">Product Listing</h1>
+            </div>
+        
+        </div>
+    }
+    
+</div>
